@@ -1,3 +1,4 @@
+# 서로 크기가 다른 데이터를 Concatenate 하면 합쳐지는데 이게 학습이 될만 하도록 Concatenate 된걸까?
 import numpy as np
 
 x1 = np.array([ [1,2,3,4,5],
