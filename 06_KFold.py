@@ -61,9 +61,10 @@ for i in range(k):
 
 
     model.fit(partial_train_data, partial_train_targets,
-                    epochs=5, batch_size=200, verbose=0)
+                    epochs=5, batch_size=200, verbose=1)
 
     val_mse, val_mae = model.evaluate(val_data, val_targets, verbose=0)
+    print(val_mae)
     all_scores.append(val_mae)
 print("\n Test Accuracy: %.4f" % (model.evaluate(X_test, Y_test)[1]))
 
