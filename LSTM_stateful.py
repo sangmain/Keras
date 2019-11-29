@@ -48,15 +48,7 @@ x, y = generate_data(1, 100)
 x_test, y_test = generate_data(100, 110)
 
 
-# x_test = x2[10:17]
-# y_test = y2[10:17]
 
-
-# x_valid = np_mul(x_valid, batch_size)
-# y_valid = np_mul(y_valid, batch_size)
-
-# print(x_valid.shape)
-# print(y_valid.shape)
 
 from keras.models import Sequential
 from keras.layers import LSTM, Dense, Dropout, Reshape
