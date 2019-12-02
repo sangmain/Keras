@@ -38,10 +38,12 @@ y = np.array(y)
 print(y.shape)
 print(y[0])
 
-x1 = x1.reshape(x1.shape[0], -1, x1.shape[1])
-x2 = x2.reshape(x2.shape[0], -1, x2.shape[1])
+x1 = x1.reshape(x1.shape[0], x1.shape[1], -1)
+x2 = x2.reshape(x2.shape[0], x2.shape[1], -1)
 
-x = np.concatenate((x1, x2), axis=1)
+x = np.append(x1, x2, axis=2)
+
+
 print(x[0])
 print(x.shape)
 print(y.shape)
@@ -59,13 +61,13 @@ print(y_train.shape)
 print(y_test.shape)
 
 from sklearn.utils import shuffle
-x, y = shuffle(x, y, random_state=42)
+x_train, y_train = shuffle(x_train, y_train, random_state=42)
 
 from keras.models import Sequential
 from keras.layers import LSTM, Dense, Dropout
 
 model = Sequential()
-model.add(LSTM(16, return_sequences=True, input_shape=(2, 5), activation='relu'))
+model.add(LSTM(16, return_sequences=True, input_shape=(5, 2), activation='relu'))
 model.add(LSTM(16, activation='relu'))
 model.add(Dense(1))
 
