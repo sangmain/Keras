@@ -18,8 +18,14 @@ def split(x, split):
 
     return sequences
 data = np.array(split(x, 8))
+<<<<<<< HEAD
 np.random.shuffle(data)
 
+=======
+
+import random
+random.shuffle(data)
+>>>>>>> 6637b3519b923a6ba26d35f182294453b94227f4
 print(data.shape)
 
 y = np.zeros((data.shape[0], 3, 3))
